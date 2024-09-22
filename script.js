@@ -8,7 +8,14 @@
 
 function initialize() {
     let now = new Date();
-    document.getElementById("hours").textContent = now.getHours();
-    document.getElementById("minutes").textContent = now.getMinutes();
-    document.getElementById("seconds").textContent = now.getSeconds();
+    document.getElementById("hours").textContent = formatTimeComponent(now.getHours());
+    document.getElementById("minutes").textContent = formatTimeComponent(now.getMinutes());
+    document.getElementById("seconds").textContent = formatTimeComponent(now.getSeconds());
+}
+
+function formatTimeComponent(value) {
+    if (value < 10) {
+        value = "0" + value;
+    }
+    return value;
 }
