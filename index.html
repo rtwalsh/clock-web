@@ -13,6 +13,22 @@
                 <div id="digital_clock">
                     <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
                 </div>
+                <div id="digital_options">
+                    Format:
+                    <input id="12_hour" 
+                           type="radio" 
+                           name="time_format" 
+                           value="12_hour" 
+                           onclick="select12or24hours(event)" 
+                           checked>
+                    <label for="12_hour">12 hour</label>
+                    <input id="24_hour" 
+                           type="radio" 
+                           name="time_format" 
+                           value="24_hour" 
+                           onclick="select12or24hours(event)">
+                    <label for="24_hour">24 hour</label>
+                </div>
             </section>
         </div>
         <script type="text/javascript" src="script.js"></script>
