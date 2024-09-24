@@ -7,6 +7,11 @@
  */
 
 function initialize() {
+    updateTime();
+    setInterval(updateTime, 1000);
+}
+
+function updateTime() {
     let now = new Date();
     document.getElementById("hours").textContent = formatTimeComponent(now.getHours());
     document.getElementById("minutes").textContent = formatTimeComponent(now.getMinutes());
