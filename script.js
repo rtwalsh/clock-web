@@ -22,11 +22,12 @@ function updateTime() {
         if (hours === 0) {
             hours = 12;
         }
-    } else {
 
+        document.getElementById("hours").textContent = hours;
+    } else {
+        document.getElementById("hours").textContent = formatTimeComponent(hours);
     }
 
-    document.getElementById("hours").textContent = formatTimeComponent(hours);
     document.getElementById("minutes").textContent = formatTimeComponent(minutes);
     document.getElementById("seconds").textContent = formatTimeComponent(seconds);
 }
