@@ -16,8 +16,13 @@ function updateTime() {
     let hours = now.getHours();
     let minutes = now.getMinutes();
     let seconds = now.getSeconds();
+    let amOrPmElement = document.getElementById("am_or_pm");
 
     if (document.getElementById("12_hour").checked) {
+        let amOrPmText = (hours > 11) ? "pm" : "am";
+        amOrPmElement.textContent = amOrPmText;
+        amOrPmElement.hidden = false;
+
         hours = hours % 12; // % is the symbol for the modulo operator
         if (hours === 0) {
             hours = 12;
@@ -26,6 +31,7 @@ function updateTime() {
         document.getElementById("hours").textContent = hours;
     } else {
         document.getElementById("hours").textContent = formatTimeComponent(hours);
+        amOrPmElement.hidden = true;
     }
 
     document.getElementById("minutes").textContent = formatTimeComponent(minutes);
