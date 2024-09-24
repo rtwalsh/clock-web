@@ -13,9 +13,22 @@ function initialize() {
 
 function updateTime() {
     let now = new Date();
-    document.getElementById("hours").textContent = formatTimeComponent(now.getHours());
-    document.getElementById("minutes").textContent = formatTimeComponent(now.getMinutes());
-    document.getElementById("seconds").textContent = formatTimeComponent(now.getSeconds());
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+
+    if (document.getElementById("12_hour").checked) {
+        hours = hours % 12; // % is the symbol for the modulo operator
+        if (hours === 0) {
+            hours = 12;
+        }
+    } else {
+
+    }
+
+    document.getElementById("hours").textContent = formatTimeComponent(hours);
+    document.getElementById("minutes").textContent = formatTimeComponent(minutes);
+    document.getElementById("seconds").textContent = formatTimeComponent(seconds);
 }
 
 function formatTimeComponent(value) {
