@@ -24,3 +24,10 @@ function formatTimeComponent(value) {
     }
     return value;
 }
+
+function select12or24hours(event) {
+    if (event.currentTarget.checked) {
+        console.log("The " + event.currentTarget.value + " format has been selected.");
+    }
+    updateTime();
+}
